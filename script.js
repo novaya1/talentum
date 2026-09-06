@@ -1,3 +1,2 @@
-const toggle=document.querySelector('.mobile-toggle');
-const links=document.querySelector('.navlinks');
-if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open'));}
+
+(()=>{const root=document;const btn=root.querySelector('.menu-btn'),nav=root.querySelector('.nav');if(btn&&nav){btn.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')))}const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});root.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));})();
